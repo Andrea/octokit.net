@@ -13,13 +13,12 @@ namespace Octokit
         : ISerializable
 #endif
     {
-
         public RateLimit(IDictionary<string, string> responseHeaders)
         {
             Ensure.ArgumentNotNull(responseHeaders, "responseHeaders");
 
-            Limit = (int) GetHeaderValueAsInt32Safe(responseHeaders, "X-RateLimit-Limit");
-            Remaining = (int) GetHeaderValueAsInt32Safe(responseHeaders, "X-RateLimit-Remaining");
+            Limit = (int)GetHeaderValueAsInt32Safe(responseHeaders, "X-RateLimit-Limit");
+            Remaining = (int)GetHeaderValueAsInt32Safe(responseHeaders, "X-RateLimit-Remaining");
             Reset = GetHeaderValueAsInt32Safe(responseHeaders, "X-RateLimit-Reset").FromUnixTime();
         }
 

@@ -6,7 +6,7 @@ namespace Octokit.Helpers
     /// Extensions for converting between different time representations
     /// </summary>
     public static class UnixTimestampExtensions
-    { 
+    {
         // Unix Epoch is January 1, 1970 00:00 -0:00
         const long unixEpochTicks = 621355968000000000;
 

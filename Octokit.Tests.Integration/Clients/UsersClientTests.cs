@@ -79,7 +79,7 @@ public class UsersClientTests
                 Bio = "UPDATED BIO"
             };
 
-            var e = await AssertEx.Throws<AuthorizationException>(async 
+            var e = await AssertEx.Throws<AuthorizationException>(async
                 () => await github.User.Update(userUpdate));
             Assert.Equal(HttpStatusCode.Unauthorized, e.StatusCode);
         }
@@ -95,7 +95,7 @@ public class UsersClientTests
                 Bio = "UPDATED BIO"
             };
 
-            var e = await AssertEx.Throws<AuthorizationException>(async 
+            var e = await AssertEx.Throws<AuthorizationException>(async
                 () => await github.User.Update(userUpdate));
             Assert.Equal(HttpStatusCode.Unauthorized, e.StatusCode);
         }

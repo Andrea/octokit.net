@@ -76,7 +76,6 @@ namespace Octokit.Tests.Clients
                 await AssertEx.Throws<ArgumentNullException>(async () => await client.Get(null, "name", 1));
                 await AssertEx.Throws<ArgumentNullException>(async () => await client.Get("owner", null, 1));
             }
-
         }
     }
 }

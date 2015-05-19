@@ -71,7 +71,7 @@ namespace Octokit
             Ensure.ArgumentNotNullOrEmptyString(repositoryName, "repositoryName");
 
             var endpoint = "/repos/{0}/{1}/stats/commit_activity".FormatUri(owner, repositoryName);
-            var activity = await ApiConnection.GetQueuedOperation<IReadOnlyList<WeeklyCommitActivity>>(endpoint,cancellationToken);
+            var activity = await ApiConnection.GetQueuedOperation<IReadOnlyList<WeeklyCommitActivity>>(endpoint, cancellationToken);
             return new CommitActivity(activity);
         }
 
@@ -99,7 +99,7 @@ namespace Octokit
             Ensure.ArgumentNotNullOrEmptyString(repositoryName, "repositoryName");
 
             var endpoint = "/repos/{0}/{1}/stats/code_frequency".FormatUri(owner, repositoryName);
-            var rawFrequencies = await ApiConnection.GetQueuedOperation<IEnumerable<long[]>>(endpoint,cancellationToken);
+            var rawFrequencies = await ApiConnection.GetQueuedOperation<IEnumerable<long[]>>(endpoint, cancellationToken);
             return new CodeFrequency(rawFrequencies);
         }
 
@@ -127,7 +127,7 @@ namespace Octokit
             Ensure.ArgumentNotNullOrEmptyString(repositoryName, "repositoryName");
 
             var endpoint = "/repos/{0}/{1}/stats/participation".FormatUri(owner, repositoryName);
-            return await ApiConnection.GetQueuedOperation<Participation>(endpoint,cancellationToken);
+            return await ApiConnection.GetQueuedOperation<Participation>(endpoint, cancellationToken);
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Octokit
         /// <returns>Returns commit counts per hour in each day</returns>
         public Task<PunchCard> GetPunchCard(string owner, string repositoryName)
         {
-            return GetPunchCard(owner, repositoryName,CancellationToken.None);
+            return GetPunchCard(owner, repositoryName, CancellationToken.None);
         }
 
         /// <summary>

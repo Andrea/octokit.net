@@ -59,12 +59,12 @@ public class CommitsClientTests
         {
             var client = new CommitsClient(Substitute.For<IApiConnection>());
 
-            var newCommit = new NewCommit("message", "tree", new[]{"parent1", "parent2"});
+            var newCommit = new NewCommit("message", "tree", new[] { "parent1", "parent2" });
             await AssertEx.Throws<ArgumentNullException>(async () => await client.Create(null, "name", newCommit));
             await AssertEx.Throws<ArgumentNullException>(async () => await client.Create("owner", null, newCommit));
             await AssertEx.Throws<ArgumentNullException>(async () => await client.Create("owner", "name", null));
             await AssertEx.Throws<ArgumentException>(async () => await client.Create("", "name", newCommit));
-            await AssertEx.Throws<ArgumentException>(async () => await client.Create("owner", "", newCommit));            
+            await AssertEx.Throws<ArgumentException>(async () => await client.Create("owner", "", newCommit));
         }
     }
 

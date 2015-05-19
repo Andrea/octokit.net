@@ -132,5 +132,5 @@ namespace Octokit.Tests.Reactive
                 Assert.Throws<ArgumentNullException>(() => new ObservableDeploymentsClient(null));
             }
         }
-    } 
+    }
 }

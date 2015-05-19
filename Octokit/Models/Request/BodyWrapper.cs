@@ -7,6 +7,6 @@
             Body = body;
         }
 
-        public string Body { get; private set; } 
+        public string Body { get; private set; }
     }
 }

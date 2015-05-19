@@ -13,7 +13,7 @@ namespace Octokit
         public NewMilestone(string title)
         {
             Ensure.ArgumentNotNull(title, "title");
-            
+
             Title = title;
             State = ItemState.Open;
         }

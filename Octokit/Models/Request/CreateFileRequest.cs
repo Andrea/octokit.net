@@ -14,7 +14,7 @@ namespace Octokit
         protected ContentRequest(string message)
         {
             Ensure.ArgumentNotNullOrEmptyString(message, "message");
-            
+
             Message = message;
         }
 

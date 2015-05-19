@@ -28,7 +28,7 @@ namespace Octokit
         /// <param name="message">The message to associate with the commit</param>
         /// <param name="tree">The tree associated with the commit</param>
         public NewCommit(string message, string tree)
-            : this(message,tree, Enumerable.Empty<string>())
+            : this(message, tree, Enumerable.Empty<string>())
         {
         }
 
@@ -39,7 +39,7 @@ namespace Octokit
         /// <param name="tree">The tree associated with the commit</param>
         /// <param name="parent">The commit to use as a parent</param>
         public NewCommit(string message, string tree, string parent)
-            : this(message, tree, new [] { parent })
+            : this(message, tree, new[] { parent })
         {
         }
 

@@ -18,7 +18,7 @@ public class RepositoriesClientTests
             var repoName = Helper.MakeNameWithTimestamp("public-repo");
 
             var createdRepository = await github.Repository.Create(new NewRepository(repoName));
-                
+
             try
             {
                 var cloneUrl = string.Format("https://github.com/{0}/{1}.git", Helper.UserName, repoName);
@@ -285,7 +285,7 @@ public class RepositoriesClientTests
                 throw new Exception("Test cannot complete, account is on free plan");
             }
 
-            var createRepoTasks = 
+            var createRepoTasks =
                 Enumerable.Range(0, (int)freePrivateSlots)
                 .Select(x =>
                 {
@@ -540,7 +540,7 @@ public class RepositoriesClientTests
         }
     }
 
-    
+
     public class TheGetAllPublicMethod
     {
         [IntegrationTest(Skip = "Takes too long to run.")]

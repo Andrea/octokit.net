@@ -5,7 +5,7 @@ namespace Octokit
 {
     public interface ICredentialStore
     {
-        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification="Nope")]
+        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "Nope")]
         Task<Credentials> GetCredentials();
     }
 }

@@ -44,7 +44,7 @@ namespace Octokit.Tests.Reactive
             {
                 var firstPageUrl = new Uri("repos/fake/repo/milestones", UriKind.Relative);
                 var secondPageUrl = new Uri("https://example.com/page/2");
-                var firstPageLinks = new Dictionary<string, Uri> {{"next", secondPageUrl}};
+                var firstPageLinks = new Dictionary<string, Uri> { { "next", secondPageUrl } };
                 var firstPageResponse = new ApiResponse<List<Milestone>>
                 (
                     CreateResponseWithApiInfo(firstPageLinks),
@@ -56,7 +56,7 @@ namespace Octokit.Tests.Reactive
                     }
                 );
                 var thirdPageUrl = new Uri("https://example.com/page/3");
-                var secondPageLinks = new Dictionary<string, Uri> {{"next", thirdPageUrl}};
+                var secondPageLinks = new Dictionary<string, Uri> { { "next", thirdPageUrl } };
                 var secondPageResponse = new ApiResponse<List<Milestone>>
                 (
                     CreateResponseWithApiInfo(secondPageLinks),
@@ -97,7 +97,7 @@ namespace Octokit.Tests.Reactive
             {
                 var firstPageUrl = new Uri("repos/fake/repo/milestones", UriKind.Relative);
                 var secondPageUrl = new Uri("https://example.com/page/2");
-                var firstPageLinks = new Dictionary<string, Uri> {{"next", secondPageUrl}};
+                var firstPageLinks = new Dictionary<string, Uri> { { "next", secondPageUrl } };
                 var firstPageResponse = new ApiResponse<List<Milestone>>
                 (
                     CreateResponseWithApiInfo(firstPageLinks),
@@ -109,7 +109,7 @@ namespace Octokit.Tests.Reactive
                     }
                 );
                 var thirdPageUrl = new Uri("https://example.com/page/3");
-                var secondPageLinks = new Dictionary<string, Uri> {{"next", thirdPageUrl}};
+                var secondPageLinks = new Dictionary<string, Uri> { { "next", thirdPageUrl } };
                 var secondPageResponse = new ApiResponse<List<Milestone>>
                 (
                     CreateResponseWithApiInfo(secondPageLinks),

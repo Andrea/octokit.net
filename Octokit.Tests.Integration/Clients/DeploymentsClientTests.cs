@@ -47,7 +47,7 @@ public class DeploymentsClientTests : IDisposable
         var newCommit = new NewCommit("test-commit", treeResult.Sha);
         _commit = _gitHubClient.GitDatabase.Commit.Create(_repositoryOwner, _repository.Name, newCommit).Result;
     }
-  
+
     [IntegrationTest]
     public async Task CanCreateDeployment()
     {
@@ -63,7 +63,7 @@ public class DeploymentsClientTests : IDisposable
     {
         var newDeployment = new NewDeployment { Ref = _commit.Sha, AutoMerge = false };
         await _deploymentsClient.Create(_repositoryOwner, _repository.Name, newDeployment);
-        
+
         var deployments = await _deploymentsClient.GetAll(_repositoryOwner, _repository.Name);
 
         Assert.NotEmpty(deployments);

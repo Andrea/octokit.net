@@ -60,7 +60,7 @@ namespace Octokit
         /// <returns><see cref="IReadOnlyList{T}"/> of the The API resources in the list.</returns>
         /// <exception cref="ApiException">Thrown when an API error occurs.</exception>
         Task<IReadOnlyList<T>> GetAll<T>(Uri uri);
-        
+
         /// <summary>
         /// Gets all API resources in the list at the specified URI.
         /// </summary>
@@ -109,7 +109,7 @@ namespace Octokit
         /// <param name="accepts">Accept header to use for the API request</param>
         /// <returns>The created API resource.</returns>
         /// <exception cref="ApiException">Thrown when an API error occurs.</exception>
-        Task<T> Post<T>(Uri uri, object data, string accepts); 
+        Task<T> Post<T>(Uri uri, object data, string accepts);
 
         /// <summary>
         /// Creates a new API resource in the list at the specified URI.
@@ -262,6 +262,6 @@ namespace Octokit
         /// <param name="cancellationToken">A token used to cancel this potentially long running request</param>
         /// <returns>The updated API resource.</returns>
         /// <exception cref="ApiException">Thrown when an API error occurs.</exception>
-        Task<T> GetQueuedOperation<T>(Uri uri,CancellationToken cancellationToken);
+        Task<T> GetQueuedOperation<T>(Uri uri, CancellationToken cancellationToken);
     }
 }

@@ -192,7 +192,7 @@ namespace Octokit.Tests.Reactive
                     });
                 var lastPageResponse = new ApiResponse<List<PullRequestReviewComment>>
                 (
-                    new Response(),               
+                    new Response(),
                     new List<PullRequestReviewComment>
                     {
                         new PullRequestReviewComment(7),

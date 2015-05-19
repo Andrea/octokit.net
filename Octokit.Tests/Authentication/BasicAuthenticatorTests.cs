@@ -14,7 +14,7 @@ namespace Octokit.Tests
                 var authenticator = new BasicAuthenticator();
                 var request = new Request();
 
-                authenticator.Authenticate(request, new Credentials("that-creepy-dude", "Fahrvergnügen"));
+                authenticator.Authenticate(request, new Credentials("that-creepy-dude", "Fahrvergn\u00FCgen"));
 
                 Assert.Contains("Authorization", request.Headers.Keys);
                 Assert.Equal("Basic dGhhdC1jcmVlcHktZHVkZTpGYWhydmVyZ27DvGdlbg==", request.Headers["Authorization"]);

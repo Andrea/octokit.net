@@ -106,7 +106,7 @@ namespace Octokit
 
                 if (Base64Encoded)
                 {
-                    return delegate(object source)
+                    return delegate (object source)
                     {
                         var value = getDelegate(source);
                         var stringValue = value as string;
@@ -140,7 +140,7 @@ namespace Octokit
                 }
                 if (Base64Encoded)
                 {
-                    return delegate(object source, object value)
+                    return delegate (object source, object value)
                     {
                         var stringValue = value as string;
                         if (stringValue == null)
@@ -149,7 +149,6 @@ namespace Octokit
                         }
                         setDelegate(source, stringValue.FromBase64String());
                     };
-
                 }
                 return setDelegate;
             }
@@ -167,7 +166,7 @@ namespace Octokit
                 {
                     return _fieldInfo.FieldType;
                 }
-                throw new InvalidOperationException("Property and Field cannot both be null");   
+                throw new InvalidOperationException("Property and Field cannot both be null");
             }
         }
 

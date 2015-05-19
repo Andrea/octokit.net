@@ -22,7 +22,7 @@ public class BranchesClientTests
         public async Task ReturnsBranches()
         {
             var branches = await _github.Repository.GetAllBranches(_repository.Owner.Login, _repository.Name);
-            
+
             Assert.NotEmpty(branches);
             Assert.Equal(branches[0].Name, "master");
         }

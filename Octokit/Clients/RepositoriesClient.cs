@@ -49,7 +49,7 @@ namespace Octokit
         public Task<Repository> Create(NewRepository newRepository)
         {
             Ensure.ArgumentNotNull(newRepository, "newRepository");
-            
+
             return Create(ApiUrls.Repositories(), null, newRepository);
         }
 
@@ -82,7 +82,7 @@ namespace Octokit
             catch (ApiValidationException e)
             {
                 string errorMessage = e.ApiError.FirstErrorMessageSafe();
-                
+
                 if (String.Equals(
                     "name already exists on this account",
                     errorMessage,

@@ -6,7 +6,6 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Octokit
 {
-
     /// <summary>
     /// A client for GitHub's Organization Teams API.
     /// </summary>

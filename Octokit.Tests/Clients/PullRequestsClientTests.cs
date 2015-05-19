@@ -55,7 +55,7 @@ namespace Octokit.Tests.Clients
                 var connection = Substitute.For<IApiConnection>();
                 var client = new PullRequestsClient(connection);
 
-                client.GetAllForRepository("fake", "repo", new PullRequestRequest { Head = "user:ref-head", Base = "fake_base_branch"});
+                client.GetAllForRepository("fake", "repo", new PullRequestRequest { Head = "user:ref-head", Base = "fake_base_branch" });
 
                 connection.Received().GetAll<PullRequest>(Arg.Is<Uri>(u => u.ToString() == "repos/fake/repo/pulls"),
                     Arg.Is<Dictionary<string, string>>(d => d.Count == 5
@@ -135,7 +135,7 @@ namespace Octokit.Tests.Clients
             }
         }
 
-        public class TheMergeMethod 
+        public class TheMergeMethod
         {
             [Fact]
             public void PutsToCorrectUrl()
@@ -165,7 +165,7 @@ namespace Octokit.Tests.Clients
             }
         }
 
-        public class TheMergedMethod 
+        public class TheMergedMethod
         {
             [Fact]
             public void RequestsCorrectUrl()
@@ -194,7 +194,7 @@ namespace Octokit.Tests.Clients
             }
         }
 
-        public class TheCommitsMethod 
+        public class TheCommitsMethod
         {
             [Fact]
             public async Task RequestsCorrectUrl()
@@ -203,7 +203,7 @@ namespace Octokit.Tests.Clients
                 var client = new PullRequestsClient(connection);
 
                 await client.Commits("fake", "repo", 42);
-				
+
                 connection.Received()
                     .GetAll<PullRequestCommit>(Arg.Is<Uri>(u => u.ToString() == "repos/fake/repo/pulls/42/commits"));
             }

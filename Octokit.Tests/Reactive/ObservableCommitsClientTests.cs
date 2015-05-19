@@ -32,9 +32,9 @@ namespace Octokit.Tests.Reactive
                 await AssertEx.Throws<ArgumentNullException>(async () => await client.Get("owner", "name", null));
                 await AssertEx.Throws<ArgumentException>(async () => await client.Get("", "name", "reference"));
                 await AssertEx.Throws<ArgumentException>(async () => await client.Get("owner", "", "reference"));
-                await AssertEx.Throws<ArgumentException>(async () => await client.Get("owner", "name", ""));                
+                await AssertEx.Throws<ArgumentException>(async () => await client.Get("owner", "name", ""));
             }
- 
+
             [Fact]
             public async Task RequestsCorrectUrl()
             {
@@ -61,7 +61,7 @@ namespace Octokit.Tests.Reactive
                 await AssertEx.Throws<ArgumentException>(async () => await client.Create("", "name", newCommit));
                 await AssertEx.Throws<ArgumentException>(async () => await client.Create("owner", "", newCommit));
             }
- 
+
             [Fact]
             public async Task RequestsCorrectUrl()
             {

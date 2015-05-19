@@ -21,7 +21,6 @@ public class RepositoryDeployKeysClientTests : IDisposable
         _fixture = client.Repository.DeployKeys;
         _repository = client.Repository.Create(new NewRepository(repoName) { AutoInit = true }).Result;
         _owner = _repository.Owner.Login;
-
     }
 
     [IntegrationTest(Skip = "see https://github.com/octokit/octokit.net/issues/533 for the resolution to this failing test")]

@@ -28,16 +28,16 @@ namespace Octokit.Tests.Clients
                 var client = Substitute.For<IApiConnection>();
                 var statisticsClient = new StatisticsClient(client);
 
-                statisticsClient.GetContributors("username","repositoryName");
+                statisticsClient.GetContributors("username", "repositoryName");
 
-                client.Received().GetQueuedOperation<IEnumerable<Contributor>>(expectedEndPoint,Args.CancellationToken);
+                client.Received().GetQueuedOperation<IEnumerable<Contributor>>(expectedEndPoint, Args.CancellationToken);
             }
 
             [Fact]
             public async Task ThrowsIfGivenNullOwner()
             {
                 var statisticsClient = new StatisticsClient(Substitute.For<IApiConnection>());
-                await AssertEx.Throws<ArgumentNullException>(() => statisticsClient.GetContributors(null,"repositoryName"));
+                await AssertEx.Throws<ArgumentNullException>(() => statisticsClient.GetContributors(null, "repositoryName"));
             }
 
             [Fact]

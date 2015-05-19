@@ -33,13 +33,13 @@ namespace Octokit.Tests.Clients
             {
                 var client = new MergingClient(Substitute.For<IApiConnection>());
 
-                var newMerge = new NewMerge("baseBranch", "shaToMerge") {CommitMessage = "some mergingMessage"};
+                var newMerge = new NewMerge("baseBranch", "shaToMerge") { CommitMessage = "some mergingMessage" };
                 await AssertEx.Throws<ArgumentNullException>(async () => await client.Create(null, "name", newMerge));
                 await AssertEx.Throws<ArgumentNullException>(async () => await client.Create("owner", null, newMerge));
                 await AssertEx.Throws<ArgumentNullException>(async () => await client.Create("owner", "name", null));
                 await AssertEx.Throws<ArgumentException>(async () => await client.Create("", "name", newMerge));
-                await AssertEx.Throws<ArgumentException>(async () => await client.Create("owner", "", newMerge));            
-                await AssertEx.Throws<ArgumentException>(async () => await client.Create("owner", "", null));            
+                await AssertEx.Throws<ArgumentException>(async () => await client.Create("owner", "", newMerge));
+                await AssertEx.Throws<ArgumentException>(async () => await client.Create("owner", "", null));
             }
         }
 

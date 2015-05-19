@@ -223,7 +223,6 @@ namespace Octokit.Tests.Clients
                 var client = new TeamsClient(connection);
 
                 AssertEx.Throws<ArgumentException>(() => client.AddRepository(1, "org name", null));
-
             }
         }
     }

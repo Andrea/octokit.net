@@ -25,7 +25,7 @@ namespace Octokit.Tests.Reactive
 
             [Fact]
             public async Task ThrowsIfGivenNullRepositoryName()
-            {   
+            {
                 var statisticsClient = new ObservableStatisticsClient(Substitute.For<IGitHubClient>());
                 await AssertEx.Throws<ArgumentNullException>(async () => await statisticsClient.GetContributors("owner", null));
             }

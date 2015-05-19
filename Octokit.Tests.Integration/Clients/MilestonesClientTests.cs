@@ -40,7 +40,7 @@ public class MilestonesClientTests : IDisposable
     public async Task CanListEmptyMilestones()
     {
         var milestones = await _milestonesClient.GetAllForRepository(_repositoryOwner, _repositoryName);
-        
+
         Assert.Empty(milestones);
     }
 

@@ -104,10 +104,10 @@ namespace Octokit.Tests.Http
             public async Task EnsuresArgumentNotNull()
             {
                 var client = new ApiConnection(Substitute.For<IConnection>());
-                
+
                 // One argument
                 await AssertEx.Throws<ArgumentNullException>(async () => await client.GetAll<object>(null));
-                
+
                 // Two argument
                 await AssertEx.Throws<ArgumentNullException>(async () =>
                     await client.GetAll<object>(null, new Dictionary<string, string>()));
@@ -323,10 +323,10 @@ namespace Octokit.Tests.Http
                 const HttpStatusCode statusCode = HttpStatusCode.OK;
                 IApiResponse<object> response = new ApiResponse<object>(new Response(statusCode, null, new Dictionary<string, string>(), "application/json"), new object());
                 var connection = Substitute.For<IConnection>();
-                connection.GetResponse<object>(queuedOperationUrl,Args.CancellationToken).Returns(Task.FromResult(response));
+                connection.GetResponse<object>(queuedOperationUrl, Args.CancellationToken).Returns(Task.FromResult(response));
                 var apiConnection = new ApiConnection(connection);
 
-                await apiConnection.GetQueuedOperation<object>(queuedOperationUrl,CancellationToken.None);
+                await apiConnection.GetQueuedOperation<object>(queuedOperationUrl, CancellationToken.None);
 
                 connection.Received().GetResponse<object>(queuedOperationUrl, Args.CancellationToken);
             }
@@ -358,7 +358,7 @@ namespace Octokit.Tests.Http
                 var apiConnection = new ApiConnection(connection);
 
                 var actualResult = await apiConnection.GetQueuedOperation<object>(queuedOperationUrl, Args.CancellationToken);
-                Assert.Same(actualResult,result);
+                Assert.Same(actualResult, result);
             }
 
             [Fact]
@@ -372,7 +372,7 @@ namespace Octokit.Tests.Http
                 var connection = Substitute.For<IConnection>();
                 connection.GetResponse<object>(queuedOperationUrl, Args.CancellationToken)
                           .Returns(x => Task.FromResult(firstResponse),
-                          x => Task.FromResult(firstResponse), 
+                          x => Task.FromResult(firstResponse),
                           x => Task.FromResult(completedResponse));
 
                 var apiConnection = new ApiConnection(connection);

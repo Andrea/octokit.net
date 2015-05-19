@@ -25,7 +25,7 @@ public class AssigneesClientTests
         var isAssigned = await
             _gitHubClient.Issue.Assignee.CheckAssignee(_owner, _repository.Name, "FakeHaacked");
         Assert.False(isAssigned);
-        
+
         // Repository owner is always an assignee
         isAssigned = await
             _gitHubClient.Issue.Assignee.CheckAssignee(_owner, _repository.Name, _owner);
