@@ -3,6 +3,7 @@
 "tools\nuget\nuget.exe" "install" "xunit.runner.console" "-OutputDirectory" "tools" "-ExcludeVersion" "-version" "2.0.0"
 "tools\nuget\nuget.exe" "install" "FAKE.Core" "-OutputDirectory" "tools" "-ExcludeVersion" "-version" "3.12.2"
 "tools\nuget\nuget.exe" "install" "SourceLink.Fake" "-OutputDirectory" "tools" "-ExcludeVersion" "-version" "0.4.2"
+"tools\nuget\nuget.exe" "install" "Octokit.CodeFormatter" "-OutputDirectory" "tools" "-ExcludeVersion" "-version" "1.0.0-preview" -Pre
 
 :Build
 cls
